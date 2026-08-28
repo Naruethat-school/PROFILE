@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | ด.ช.นฤธัท การุณยวงศกร</title>
+    
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blueprint: {
+                            DEFAULT: '#0f172a', // Slate 900
+                            light: '#1e293b',   // Slate 800
+                            dark: '#020617',    // Slate 950
+                            accent: '#1e40af',  // Blue 800
+                        },
+                        concrete: {
+                            DEFAULT: '#64748b', // Slate 500
+                            light: '#f8fafc',   // Slate 50
+                            dark: '#334155',    // Slate 700
+                        },
+                        safety: {
+                            DEFAULT: '#f97316', // Orange 500
+                            hover: '#ea580c',   // Orange 600
+                            yellow: '#eab308',  // Yellow 500
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-concrete-light text-slate-800 antialiased selection:bg-safety selection:text-white">
+
+    <!-- ========================================== -->
+    <!-- HEADER & NAVIGATION (แถบเมนูด้านบน) -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-blueprint/95 backdrop-blur-md border-b border-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- โลโก้ / ชื่อย่อโรงเรียน -->
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-safety flex items-center justify-center font-bold text-xl text-white shadow-md">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base sm:text-lg tracking-wider text-white block leading-none">NARUETHAT<span class="text-safety">.PORTFOLIO</span></span>
+                        <span class="text-[10px] text-slate-400 font-light hidden sm:block">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร</span>
+                    </div>
+                </div>
+
+                <!-- เมนูนำทางสำหรับ Desktop -->
+                <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#hero" class="hover:text-safety transition-colors py-2">หน้าแรก</a>
+                    <a href="#about" class="hover:text-safety transition-colors py-2">เกี่ยวกับฉัน</a>
+                    <a href="#skills" class="hover:text-safety transition-colors py-2">ทักษะ</a>
+                    <a href="#projects" class="hover:text-safety transition-colors py-2">ผลงาน สอวน.</a>
+                    <a href="#contact" class="hover:text-safety transition-colors py-2">ติดต่อ</a>
+                </nav>
+
+                <!-- ปุ่ม Hamburger สำหรับ Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- เมนูดรอปดาวน์สำหรับ Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blueprint-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="#hero" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-700 hover:text-safety">หน้าแรก</a>
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-700 hover:text-safety">เกี่ยวกับฉัน</a>
+            <a href="#skills" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-700 hover:text-safety">ทักษะ</a>
+            <a href="#projects" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-700 hover:text-safety">ผลงาน สอวน.</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md hover:bg-slate-700 hover:text-safety">ติดต่อ</a>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION (ส่วนต้อนรับ) -->
+    <!-- ========================================== -->
+    <section id="hero" class="relative min-h-[85vh] flex items-center justify-center bg-blueprint text-white overflow-hidden py-20">
+        <div class="absolute inset-0 z-0 opacity-15 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/0f172a/ffffff?text=Science+And+Tech+Pattern');"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-blueprint/80 via-blueprint/95 to-blueprint z-0"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/90 border border-slate-700 text-safety text-xs sm:text-sm font-medium mb-6 shadow-sm">
+                <i class="fa-solid fa-award"></i> นักเรียน สอวน.คอมพิวเตอร์ ค่าย 2 | สมัครเข้าเรียนต่อชั้น ม.4
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-3">
+                ด.ช.นฤธัท การุณยวงศกร
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-300 font-medium mb-2">
+                โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร
+            </p>
+            
+            <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-200 mb-6">
+                "Passion for Science & Computing | <span class="text-safety">มุ่งมั่นพัฒนาทักษะวิทยาศาสตร์และคอมพิวเตอร์</span>"
+            </p>
+            
+            <p class="max-w-2xl mx-auto text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+                มุ่งมั่นประยุกต์ทักษะคณิตศาสตร์ วิทยาศาสตร์ และกระบวนการคิดเชิงอัลกอริทึมจาก สอวน.คอมพิวเตอร์ สู่การพัฒนาตนเองและการเรียนรู้ระดับชั้น ม.4
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-safety hover:bg-safety-hover text-white font-semibold transition-all duration-300 shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-folder-open"></i> ดูผลงาน สอวน.
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> ติดต่อผู้สมัคร
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ABOUT ME (แนะนำตัว & ผลการเรียน) -->
+    <!-- ========================================== -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blueprint">เกี่ยวกับฉัน (About Me)</h2>
+                <div class="w-20 h-1 bg-safety mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <!-- กล่องสรุปข้อมูลแบบสะอาดตา -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8">
+                
+                <div class="text-center sm:text-left border-b border-slate-200 pb-6">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-md mb-2">
+                        สถานศึกษา
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-2">
+                        ด.ช.นฤธัท การุณยวงศกร
+                    </h3>
+                    <p class="text-lg font-medium text-blueprint">
+                        โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+                        ปัจจุบันกำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 3 มีความสนใจและความเชี่ยวชาญโดดเด่นในกลุ่มสาระการเรียนรู้วิทยาศาสตร์ คณิตศาสตร์ และเทคโนโลยี ผ่านการทดสอบและเข้าร่วมอบรมในโครงการโอลิมปิกวิชาการ สอวน. คอมพิวเตอร์ ค่าย 1 และ ค่าย 2 มีความมุ่งมั่นทุ่มเทในการแก้ปัญหาเชิงตรรกะและการคิดวิเคราะห์อย่างมีระบบ
+                    </p>
+                </div>
+
+                <!-- การ์ดสรุปผลการเรียน (4 เทอม) -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-4 flex items-center gap-2 text-lg">
+                        <i class="fa-solid fa-graduation-cap text-safety"></i> ผลการเรียนเฉลี่ยสะสม (4 เทอม)
+                    </h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-5 bg-white rounded-xl text-center border border-slate-200 shadow-sm">
+                            <span class="block text-3xl font-extrabold text-blueprint">3.88</span>
+                            <span class="text-sm text-slate-600 font-medium mt-1 block">เกรดเฉลี่ยรวมทุกวิชา (GPAX)</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl text-center border border-slate-200 shadow-sm">
+                            <span class="block text-3xl font-extrabold text-blue-600">3.93</span>
+                            <span class="text-sm text-slate-600 font-medium mt-1 block">กลุ่มสาระการเรียนรู้คณิตศาสตร์</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl text-center border border-slate-200 shadow-sm">
+                            <span class="block text-3xl font-extrabold text-emerald-600">3.95</span>
+                            <span class="text-sm text-slate-600 font-medium mt-1 block">กลุ่มสาระการเรียนรู้วิทยาศาสตร์</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- เป้าหมายการศึกษา -->
+                <div class="p-5 bg-blueprint/5 border-l-4 border-safety rounded-r-xl">
+                    <h4 class="font-bold text-blueprint mb-1 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye text-safety"></i> เป้าหมายการศึกษา
+                    </h4>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        มุ่งมั่นเข้าศึกษาต่อชั้นมัธยมศึกษาปีที่ 4 ณ โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร เพื่อพัฒนาศักยภาพทางด้านวิทยาศาสตร์ เทคโนโลยี และการวิจัยขั้นสูง เตรียมความพร้อมสู่การเป็นนักวิทยาศาสตร์และนักเทคโนโลยีในอนาคต
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SKILLS (ทักษะและความสามารถ) -->
+    <!-- ========================================== -->
+    <section id="skills" class="py-20 bg-blueprint text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">ทักษะและความสามารถ (Skills)</h2>
+                <div class="w-20 h-1 bg-safety mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 1. วิชาการ -->
+                <div class="bg-blueprint-light p-6 rounded-xl border border-slate-700 shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-blue-600/20 text-blue-400 rounded-lg">
+                            <i class="fa-solid fa-square-root-variable text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">วิชาการ (Academic)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>วิทยาศาสตร์ (Science)</span>
+                                <span class="text-safety font-bold">GPA 3.95</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 98.75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>คณิตศาสตร์ (Mathematics)</span>
+                                <span class="text-safety font-bold">GPA 3.93</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 98.25%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>เกรดเฉลี่ยรวม (GPAX 4 เทอม)</span>
+                                <span class="text-safety font-bold">GPA 3.88</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 97%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. คอมพิวเตอร์และวิทยาการคำนวณ -->
+                <div class="bg-blueprint-light p-6 rounded-xl border border-slate-700 shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-orange-600/20 text-safety rounded-lg">
+                            <i class="fa-solid fa-code text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">คอมพิวเตอร์ & คำนวณ</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>การคิดเชิงอัลกอริทึม (สอวน.คอม)</span>
+                                <span class="text-safety font-bold">ค่าย 2</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>ภาษา C++ & Data Structures</span>
+                                <span class="text-safety font-bold">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>การแก้ปัญหาเชิงตรรกะ</span>
+                                <span class="text-safety font-bold">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-safety h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Soft Skills -->
+                <div class="bg-blueprint-light p-6 rounded-xl border border-slate-700 shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-green-600/20 text-green-400 rounded-lg">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 text-xs sm:text-sm rounded-lg border border-slate-700"><i class="fa-solid fa-check text-safety mr-1"></i> การแก้ปัญหาซับซ้อน (Problem Solving)</span>
+                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 text-xs sm:text-sm rounded-lg border border-slate-700"><i class="fa-solid fa-check text-safety mr-1"></i> การคิดเชิงตรรกะ (Logical Thinking)</span>
+                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 text-xs sm:text-sm rounded-lg border border-slate-700"><i class="fa-solid fa-check text-safety mr-1"></i> การทำงานเป็นทีม (Teamwork)</span>
+                        <span class="px-3 py-1.5 bg-slate-800 text-slate-200 text-xs sm:text-sm rounded-lg border border-slate-700"><i class="fa-solid fa-check text-safety mr-1"></i> ความละเอียดรอบคอบในการทำงาน</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- POSN PROJECTS (เฉพาะผลงาน สอวน.) -->
+    <!-- ========================================== -->
+    <section id="projects" class="py-20 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blueprint">ผลงานโอลิมปิกวิชาการ (POSN)</h2>
+                <p class="text-slate-600 mt-2">ผลงานและกิจกรรมการอบรมในโครงการโอลิมปิกวิชาการ สอวน. คอมพิวเตอร์</p>
+                <div class="w-20 h-1 bg-safety mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <!-- Card Grid: แสดงผล 2 การ์ด สอวน. กึ่งกลาง -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Project 1: สอวน. ค่าย 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-safety flex flex-col relative">
+                    <div class="absolute top-3 right-3 bg-safety text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                        ผลงานสูงสุด
+                    </div>
+                    <img src="https://placehold.co/600x400/0f172a/f97316?text=POSN+Computer+Camp+2" alt="สอวน.คอมพิวเตอร์ ค่าย 2" class="w-full h-52 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-orange-100 text-orange-800">โอลิมปิกวิชาการ</span>
+                            <h3 class="text-xl font-bold text-slate-800 mt-2">สอวน.คอมพิวเตอร์ ค่าย 2</h3>
+                            <p class="text-slate-500 text-xs font-medium mb-3">ศูนย์มหาวิทยาลัยนเรศวร</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                ผ่านการคัดเลือกและเข้าร่วมการอบรมค่ายโอลิมปิกวิชาการ สอวน. คอมพิวเตอร์ ค่าย 2 ณ ศูนย์มหาวิทยาลัยนเรศวร ศึกษาการเขียนโปรแกรมขั้นสูง โครงสร้างข้อมูล (Data Structures) และการวิเคราะห์อัลกอริทึม
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                            <i class="fa-solid fa-lightbulb text-safety mr-1"></i> สิ่งที่เรียนรู้: การแก้ปัญหาโจทย์คอมพิวเตอร์ที่ซับซ้อนและการวิเคราะห์เชิงคำนวณ
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: สอวน. ค่าย 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 flex flex-col">
+                    <img src="https://placehold.co/600x400/1e293b/38bdf8?text=POSN+Computer+Camp+1" alt="สอวน.คอมพิวเตอร์ ค่าย 1" class="w-full h-52 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-100 text-blue-800">โอลิมปิกวิชาการ</span>
+                            <h3 class="text-xl font-bold text-slate-800 mt-2">สอวน.คอมพิวเตอร์ ค่าย 1</h3>
+                            <p class="text-slate-500 text-xs font-medium mb-3">ศูนย์โรงเรียนเฉลิมขวัญสตรี</p>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                ผ่านการสอบคัดเลือกและเข้ารับการอบรมค่าย สอวน. คอมพิวเตอร์ ค่าย 1 ณ ศูนย์โรงเรียนเฉลิมขวัญสตรี ปูพื้นฐานการเขียนโปรแกรมภาษา C/C++ ตรรกศาสตร์ และทักษะกระบวนการคิดเชิงคำนวณอย่างเป็นระบบ
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                            <i class="fa-solid fa-lightbulb text-safety mr-1"></i> สิ่งที่เรียนรู้: การคิดเชิงตรรกะ พื้นฐานภาษา C/C++ และการวางโครงสร้างโปรแกรม
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CONTACT & FOOTER (การติดต่อและส่วนท้าย) -->
+    <!-- ========================================== -->
+    <footer id="contact" class="bg-blueprint-dark text-slate-300 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-10 mb-12 shadow-inner">
+                <h3 class="text-2xl font-bold text-white mb-2 text-center sm:text-left">
+                    ข้อมูลการติดต่อผู้สมัคร (Contact Information)
+                </h3>
+                <p class="text-slate-400 text-sm mb-8 text-center sm:text-left">
+                    หากคุณครูหรือท่านคณะกรรมการต้องการสอบถามข้อมูลเพิ่มเติม สามารถติดต่อได้ทางช่องทางด้านล่างนี้ครับ
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                    <!-- ชื่อผู้สมัคร -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                        <div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center text-safety text-lg flex-shrink-0">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">ผู้สมัคร</span>
+                            <span class="text-white font-semibold text-base">ด.ช.นฤธัท การุณยวงศกร</span>
+                        </div>
+                    </div>
+
+                    <!-- โรงเรียน -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                        <div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center text-safety text-lg flex-shrink-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">สถานศึกษา</span>
+                            <span class="text-white font-medium text-xs sm:text-sm">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร</span>
+                        </div>
+                    </div>
+
+                    <!-- อีเมล -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                        <div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center text-safety text-lg flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">อีเมล (Email)</span>
+                            <a href="mailto:naruethat.kar@pccpl.ac.th" class="text-white font-medium hover:text-safety transition-colors">naruethat.kar@pccpl.ac.th</a>
+                        </div>
+                    </div>
+
+                    <!-- เบอร์โทรศัพท์ -->
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                        <div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center text-safety text-lg flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-slate-400">เบอร์โทรศัพท์ (Phone)</span>
+                            <a href="tel:0658294900" class="text-white font-medium hover:text-safety transition-colors">065-829-4900</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote / คติพจน์ -->
+                <div class="mt-8 p-4 rounded-xl bg-blueprint border border-slate-700 text-center text-xs sm:text-sm text-slate-300">
+                    <i class="fa-solid fa-quote-left text-safety mr-2"></i> มุ่งมั่น พัฒนาตนเองอย่างต่อเนื่อง พร้อมสำหรับการเรียนรู้และเติบโตทางด้านวิทยาศาสตร์และเทคโนโลยี
+                </div>
+            </div>
+
+            <!-- Copyright Note -->
+            <div class="text-center text-xs text-slate-500">
+                <p>Copyright © 2026 ด.ช.นฤธัท การุณยวงศกร. All Rights Reserved.</p>
+                <p class="mt-1">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย กำแพงเพชร</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT (ฟังก์ชันการทำงาน) -->
+    <!-- ========================================== -->
+    <script>
+        // ฟังก์ชัน Toggle เมนูสําหรับหน้าจอมือถือ (Mobile Menu)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // ปิดเมนูอัตโนมัติเมื่อคลิกลิงก์นำทางบนมือถือ
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
